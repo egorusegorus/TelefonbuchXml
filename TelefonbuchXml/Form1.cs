@@ -107,7 +107,7 @@ namespace TelefonbuchXml
 
         private void btnPresonLöschen_Click(object sender, EventArgs e)
         {
-            Person person = dataGridView1.CurrentRow.DataBoundItem as Person;
+            Person? person = dataGridView1.CurrentRow.DataBoundItem as Person;
             if (person == null)
                 return;
             // Person aus der Liste löschen
@@ -122,7 +122,17 @@ namespace TelefonbuchXml
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           Person? p= dataGridView1.CurrentRow.DataBoundItem as Person;
+            Person? p = dataGridView1.CurrentRow.DataBoundItem as Person;
+            if (p == null) return;                  // wenn p ist null bedeutet ende methode
+            PersonAnzeigen(p);
+        }
+
+        private void PersonAnzeigen(Person? p)
+        {
+            txtVorname.Text = p.Vorname;
+            txtName.Text = p.Name;
+            txtTelefon.Text = p.Telefon;
+            txtEmail.Text = p.Email;
         }
     }
 }
