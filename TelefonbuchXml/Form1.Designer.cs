@@ -41,11 +41,11 @@
             btnBeenden = new Button();
             btnSpechern = new Button();
             btnLaden = new Button();
-            dataGridView1 = new DataGridView();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -124,6 +124,7 @@
             btnPersonHinzufügen.TabIndex = 8;
             btnPersonHinzufügen.Text = "Person hinzufügen";
             btnPersonHinzufügen.UseVisualStyleBackColor = true;
+            btnPersonHinzufügen.Click += btnPersonHinzufügen_Click;
             // 
             // btnPresonLöschen
             // 
@@ -146,7 +147,6 @@
             // 
             // btnSpechern
             // 
-            btnSpechern.Enabled = false;
             btnSpechern.Location = new Point(331, 84);
             btnSpechern.Name = "btnSpechern";
             btnSpechern.Size = new Size(100, 23);
@@ -156,22 +156,13 @@
             // 
             // btnLaden
             // 
-            btnLaden.Enabled = false;
             btnLaden.Location = new Point(225, 84);
             btnLaden.Name = "btnLaden";
             btnLaden.Size = new Size(100, 23);
             btnLaden.TabIndex = 12;
             btnLaden.Text = "Laden";
             btnLaden.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(572, 296);
-            dataGridView1.TabIndex = 13;
+            btnLaden.Click += btnLaden_Click;
             // 
             // panel1
             // 
@@ -207,19 +198,31 @@
             tableLayoutPanel1.Size = new Size(8, 8);
             tableLayoutPanel1.TabIndex = 15;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 120);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(572, 176);
+            dataGridView1.TabIndex = 16;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
             // TelefonbuchXml
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(572, 296);
+            Controls.Add(dataGridView1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
             Name = "TelefonbuchXml";
             Text = "TelefonbuchXml";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            FormClosing += TelefonbuchXml_FormClosing;
+            Load += TelefonbuchXml_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -238,8 +241,8 @@
         private Button btnBeenden;
         private Button btnSpechern;
         private Button btnLaden;
-        private DataGridView dataGridView1;
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
+        private DataGridView dataGridView1;
     }
 }
