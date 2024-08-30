@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -75,13 +75,13 @@ namespace TelefonbuchXml
             Person person = new Person(txtVorname.Text, txtName.Text, txtTelefon.Text, txtEmail.Text);
             lstPersons.Add(person);
             PersonenAnzeigen();
-    }
+        }
 
         private void PersonenAnzeigen()
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = lstPersons;
-}
+        }
 
         private void TelefonbuchXml_Load(object sender, EventArgs e)
         {
@@ -98,11 +98,6 @@ namespace TelefonbuchXml
         {
             PersonenLadenXml();
             PersonenAnzeigen();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
         }
 
         private void btnPresonLöschen_Click(object sender, EventArgs e)

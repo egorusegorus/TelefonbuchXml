@@ -134,6 +134,7 @@
             btnPresonLöschen.TabIndex = 9;
             btnPresonLöschen.Text = "Person löschen";
             btnPresonLöschen.UseVisualStyleBackColor = true;
+            btnPresonLöschen.Click += btnPresonLöschen_Click;
             // 
             // btnBeenden
             // 
@@ -153,6 +154,7 @@
             btnSpechern.TabIndex = 11;
             btnSpechern.Text = "Speichern";
             btnSpechern.UseVisualStyleBackColor = true;
+            btnSpechern.Click += btnSpechern_Click;
             // 
             // btnLaden
             // 
@@ -206,6 +208,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(572, 176);
             dataGridView1.TabIndex = 16;
+            dataGridView1.CellClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // TelefonbuchXml
